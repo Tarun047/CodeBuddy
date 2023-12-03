@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <PropertyGroup>
-        <EnablePreviewFeatures>True</EnablePreviewFeatures>
+        <EnablePreviewFeatures>true</EnablePreviewFeatures>
     </PropertyGroup>
     <ItemGroup>
         <!-- Turn on the WebTransport AppContext switch -->
