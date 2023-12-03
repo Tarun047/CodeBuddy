@@ -1,0 +1,27 @@
+networks:
+  code-buddy-network:
+    name: code-buddy-network
+    driver: bridge
+
+services:
+  code-buddy-web-app-service:
+    container_name: code-buddy-web-app
+    build: .
+    restart: always
+    networks:
+      - code-buddy-network
+    ports:
+      - 5001:5001
+      - 4433:4433/tcp
+      - 4433:4433/udp
+    depends_on:
+      - code-buddy-redis-service
+  
+  code-buddy-redis-service:
+    container_name: code-buddy-redis
+    image: redis:latest
+    networks:
+      - code-buddy-network
+    ports:
+      - 6379:6379
+    restart: always
